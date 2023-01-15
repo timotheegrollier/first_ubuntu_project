@@ -1,0 +1,21 @@
+#Home {
+    height: 60%;
+    form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        #message{
+            width: 100%;
+        }
+        label {
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    #messages {
+        height: 20%;
+    }
+}

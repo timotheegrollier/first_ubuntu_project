@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+
+  database:
+      container_name: database
+      volumes:
+       - db-data:/var/lib/mysql
+      image: 'mysql'
+      environment:
+          MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+          MYSQL_DATABASE: ubuntu
+      ports:
+          - 3306:3306
+      networks:
+        - ubuntu
+
+    
+    
+
+
+  phpmyadmin:
+      container_name: pma
+      image: phpmyadmin
+      ports:
+          - '8080:80'
+      environment:
+          PMA_HOST: database
+          UPLOAD_LIMIT: 300M
+      networks:
+        - ubuntu
+
+
+
+
+
+
+networks:
+  ubuntu:
+    driver: bridge
+
+volumes:
+  db-data:
+      
